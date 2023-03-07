@@ -1,0 +1,106 @@
+<section class = "cafe-page cafe-items">
+  {{#each storeStuff}}
+    <div class = "cafe-item js-item" data-item-id = {{this.id}} data-item-price = {{moneyFormatConverter this.price "telegram"}}>
+      <div class = "cafe-item-counter js-item-counter">1</div>
+      <div class = "cafe-item-photo">
+        <picture class = "cafe-item-lottie js-item-lottie" data-item-ref = {{this.ref_name}}>
+          <source type = "application/x-tgsticker" srcset = {{imageURIConcatenator this.ref_name "tgs"}}>
+          <img src = {{imageURIConcatenator this.ref_name "img"}} style = {{imageURIConcatenator this.ref_name "silo"}}>
+        </picture>
+      </div>
+      <div class = "cafe-item-label">
+        <span class = "cafe-item-title">{{this.name}}</span>
+        <span class = "cafe-item-price">{{moneyFormatConverter this.price "present"}}</span>
+      </div>
+      <div class = "cafe-item-buttons">
+        <button class = "cafe-item-decr-button js-item-decr-btn button-item ripple-handler">
+          <span class = "ripple-mask">
+            <span class = "ripple"></span>
+          </span>
+        </button>
+        <button class = "cafe-item-incr-button js-item-incr-btn button-item ripple-handler">
+          <span class = "button-item-label">Add</span>
+          <span class = "ripple-mask">
+            <span class = "ripple"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  {{/each}}
+    
+  <div class = "cafe-item-shadow"></div>
+  <div class = "cafe-item-shadow"></div>
+  <div class = "cafe-item-shadow"></div>
+  <div class = "cafe-item-shadow"></div>
+
+  {{#each storeStuff}}
+    <div class = "modal" id = {{this.ref_name}} style = "visibility: hidden; opacity: 0;">
+      <div class = "modal-dialog" id = {{idNameFormatter this.ref_name "content"}}>
+        <header class = "modal-header">
+          <div class = "modal-header-content">
+            <div class = "cafe-item-photo">
+              <picture class = "cafe-item-lottie info-lottie" data-item-ref = {{this.ref_name}} id = {{idNameFormatter this.ref_name "tgs"}}>
+                <source type = "application/x-tgsticker" srcset = {{imageURIConcatenator this.ref_name "tgs"}}>
+                <img src = {{imageURIConcatenator this.ref_name "img"}} style = {{imageURIConcatenator this.ref_name "silo"}}>
+              </picture>
+            </div>
+            <div class = "modal-header-text">
+              <span class = "info-header-title">{{this.name}}</span>
+              <span class = "info-header-description">{{this.description}}</span>
+              <span class = "info-header-price">{{moneyFormatConverter this.price "present"}}</b></span>
+            </div>
+          </div>
+        </header>
+        <section class = "modal-content" id = >
+          <span class = "info-content-title">Product Image</span>
+          <img src = {{imageURIConcatenator this.ref_name "img_real"}} class = "info-content-img"/>
+          <span class = "info-content-title">Additional Information</span>
+          <table>
+            {{#each this.add_info}}
+            <tr>
+              <th>{{this.title}}</th>
+              <td>{{this.content}}</td>
+            </tr>
+            {{/each}}
+          </table>
+        </section>
+        <div class = 'close-modal-div'>
+          <button class = "close-modal" aria-label = "close modal">CLOSE</button>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</section>
+
+<section class = "cafe-page cafe-order-overview">
+  <div class = "cafe-block">
+    <div class = "cafe-order-header-wrap">
+      <h2 class = "cafe-order-header">Your Order</h2>
+      <span class = "cafe-order-edit js-order-edit">Edit</span>
+    </div>
+    <div class = "cafe-order-items">
+      {{#each storeStuff}}
+        <div class = "cafe-order-item js-order-item" data-item-id = {{this.id}}>
+          <div class = "cafe-order-item-photo">
+            <picture class = "cafe-item-lottie js-item-lottie">
+              <source type = "application/x-tgsticker" srcset = {{imageURIConcatenator this.ref_name "tgs"}}>
+              <img src = {{imageURIConcatenator this.ref_name "img"}} style = {{imageURIConcatenator this.ref_name "silo"}}>
+            </picture>
+          </div>
+          <div class = "cafe-order-item-label">
+            <div class = "cafe-order-item-title">{{this.name}} <span class = "cafe-order-item-counter"><span class = "js-order-item-counter">1</span>x</span></div>
+            <div class = "cafe-order-item-description">{{this.description}}</div>
+          </div>
+          <div class = "cafe-order-item-price js-order-item-price">{{moneyFormatConverter this.price "present"}}</div>
+        </div>  
+      {{/each}}
+    </div>
+  </div>
+  <div class="cafe-text-field-wrap">
+    <textarea class="cafe-text-field js-order-comment-field cafe-block" rows="1" placeholder="Add comment…"></textarea>
+    <div class="cafe-text-field-hint">Any special requests, details, final wishes etc.</div>  
+  </div>
+</section>
+<div class="cafe-status-wrap">
+  <div class="cafe-status js-status" style = "visibility: hidden;"></div>
+</div>

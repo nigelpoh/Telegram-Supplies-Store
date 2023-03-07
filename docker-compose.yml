@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  foundry-supplies-bot-webap:
+    build:
+      context: ./build
+    restart: always
+    networks:
+      proj-management-network:
+        ipv4_address: 172.30.0.33
+
+  foundry-mongodb:
+    image: 'mongo:latest'
+    ports:
+      - "27017:27017"
+    volumes:
+      - './db:/data/db'
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    restart: always
+    networks:
+      proj-management-network:
+        ipv4_address: 172.30.0.34
+  
+  mongo-express:
+    image: mongo-express:latest
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      - ME_CONFIG_MONGODB_URL="mongodb://admin:password@172.30.0.34:27017"
+    networks:
+      proj-management-network:
+        ipv4_address: 172.30.0.35
+
+networks:
+  proj-management-network:
+    external:
+      name: proj-management-net

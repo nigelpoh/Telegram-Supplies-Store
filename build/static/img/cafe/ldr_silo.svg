@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512"><defs><linearGradient id="g" x1="-300%" x2="-200%" y1="0" y2="0"><stop offset="-10%" stop-opacity=".1"/><stop offset="30%" stop-opacity=".07"/><stop offset="70%" stop-opacity=".07"/><stop offset="110%" stop-opacity=".1"/><animate attributeName="x1" from="-300%" to="1200%" dur="3s" repeatCount="indefinite"/><animate attributeName="x2" from="-200%" to="1300%" dur="3s" repeatCount="indefinite"/></linearGradient></defs><path fill="url(#g)" d="M379.3,79c0.1-1.8,0-3.6-0.2-5.3V73H379c-3.8-37.5-55.2-68.6-119.2-70.8c-67.3-2.3-123,28.3-124.4,68.4
+		c0,0.8,0,1.5,0,2.3h-0.1v75.4c0,3.6,0.8,7.2,2.4,10.4c4.5,9.4,17,27.6,47.7,39.7v239.9c0,0-0.4,5.6,8.2,6.3c4,0.3,6.7-0.6,8.4-1.6
+		c1.8-1.1,2.8-3.1,2.8-5.1V204.5c14.6,3.5,32.2,5.7,53.4,5.7c21.2,0,37.2-2,51.4-5.3v297.6c0,3.4,2.4,6.2,5.7,6.8
+		c1.2,0.2,2.6,0.3,4.2,0.3c2.1,0,3.8-0.3,5.1-0.6c3.1-0.8,5.2-3.6,5.2-6.7V198.8c31.6-12.4,43.3-31.5,47.3-40.7
+		c1.2-2.9,1.9-6.1,1.9-9.2V81.3C379.2,80.5,379.3,79.7,379.3,79L379.3,79z"/></svg>

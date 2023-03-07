@@ -1,0 +1,15 @@
+<div id = "order-status-content">
+  <h1 id = "order-status-title">Your Orders</h1>
+  {{#each orders}}
+    <button data-order-id = {{this.id}} class = "order-status-button" onclick="">
+      <div class = "order-status-button-content">
+        <span class = "order-status-button-title">Order On {{this.date_ordered}}</span>
+        <span class = "order-status-button-description">Delivery Mode: {{deliveryCleanup this.delivery_type this.delivery_mode}}</span>
+        <span class = "order-status-button-price">Items: {{itemsCleanup this.prices_obj}}</span>
+      </div>  
+    </button>
+  {{/each}}
+</div>
+<div class="cafe-status-wrap">
+  <div class="cafe-status js-status" style = "visibility: hidden;"></div>
+</div>
